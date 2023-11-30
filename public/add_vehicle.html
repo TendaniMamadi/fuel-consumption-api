@@ -1,11 +1,16 @@
 <!-- add_vehicle.html -->
-<div x-data="{ description: '' }">
+<div x-data="{ description: '',regNo:''}">
     <h2>Add a New Vehicle</h2>
     
     <label for="description">Description:</label>
     <input type="text" id="description" x-model="description">
+
+    <label for="regNo">regNo:</label>
+    <input type="text" id="regNo" x-model="regNo">
     
     <button @click="addVehicle">Add Vehicle</button>
 </div>
+
+
 
 <script src="app.js" defer></script>

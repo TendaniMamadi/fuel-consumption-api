@@ -1,6 +1,6 @@
 // app.js
 async function fetchData(url, method, data) {
-    const response = await fetch(url, {
+    const response = await fetch('https://fuel-consumption-api.onrender.com/api/vehicles', {
         method: method,
         headers: {
             'Content-Type': 'application/json',
@@ -11,7 +11,7 @@ async function fetchData(url, method, data) {
 }
 
 async function loadVehicles() {
-    fetchData('/api/vehicles', 'GET')
+    fetchData('https://fuel-consumption-api.onrender.com/api/vehicle', 'GET')
         .then(data => {
             const vehiclesList = document.getElementById('vehicles-list');
             vehiclesList.innerHTML = '';
@@ -31,19 +31,19 @@ async function loadVehicles() {
 }
 
 async function addVehicle(description) {
-    fetchData('/api/vehicle', 'POST', { description })
+    fetchData('https://fuel-consumption-api.onrender.com/api/vehicle', 'POST', { description })
         .then(() => {
             loadVehicles();
-            // Optionally: Clear input fields or navigate to the list page
+           
         })
         .catch(error => console.error('Error adding vehicle:', error));
 }
 
 async function recordRefuel(vehicleId, amountPaid, liters, distance, filledUp) {
-    fetchData('/api/refuel', 'POST', { vehicleId, amountPaid, liters, distance, filledUp })
+    fetchData('https://fuel-consumption-api.onrender.com/api/refuel', 'POST', { vehicleId, amountPaid, liters, distance, filledUp })
         .then(() => {
             loadVehicles();
-            // Optionally: Clear input fields or navigate to the list page
+           
         })
         .catch(error => console.error('Error recording refuel:', error));
 }
@@ -51,3 +51,4 @@ async function recordRefuel(vehicleId, amountPaid, liters, distance, filledUp) {
 document.addEventListener('DOMContentLoaded', () => {
     loadVehicles();
 });
+
