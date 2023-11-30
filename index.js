@@ -3,9 +3,9 @@ import express from 'express';
 
 import FuelConsumption from './fuel-consumption.js';
 import FuelConsumptionAPI from './fuel-consumption-api.js';
-
+import dotenv from 'dotenv';
+dotenv.config()
 const pgp = pgPromise();
-
 const connectionOptions = {
     connectionString: process.env.DATABASE_URL,
     ssl: process.env.NODE_ENV === 'production', // Enable SSL in production

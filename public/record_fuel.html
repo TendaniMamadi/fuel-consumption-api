@@ -1,0 +1,23 @@
+<!-- record_refuel.html -->
+<div x-data="{ vehicleId: '', amountPaid: '', liters: '', distance: '', filledUp: true }">
+    <h2>Record Refuel</h2>
+    
+    <label for="vehicleId">Vehicle ID:</label>
+    <input type="text" id="vehicleId" x-model="vehicleId">
+    
+    <label for="amountPaid">Amount Paid:</label>
+    <input type="text" id="amountPaid" x-model="amountPaid">
+    
+    <label for="liters">Liters:</label>
+    <input type="text" id="liters" x-model="liters">
+    
+    <label for="distance">Distance:</label>
+    <input type="text" id="distance" x-model="distance">
+    
+    <label for="filledUp">Filled Up:</label>
+    <input type="checkbox" id="filledUp" x-model="filledUp">
+    
+    <button @click="recordRefuel">Record Refuel</button>
+</div>
+
+<script src="app.js" defer></script>
