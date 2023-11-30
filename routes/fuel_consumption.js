@@ -24,7 +24,7 @@ export default function FuelConsumptionAPI(fuelConsumption) {
     }
 
 
-    async function vehicle(req, res) {
+    async function vehicleId(req, res) {
         const {id} = req.query;
         const vehicle = await fuelConsumption.vehicle(id);
         res.render("trip",{
@@ -45,7 +45,7 @@ export default function FuelConsumptionAPI(fuelConsumption) {
 
     return {
         addVehicle,
-        vehicle,
+        vehicleId,
         vehicles,
         refuel
     }

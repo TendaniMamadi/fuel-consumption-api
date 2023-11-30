@@ -1,48 +1,58 @@
+<form action="/show" method="post">
+    <h1>All Cars</h1>
 
-    <form action="/show" method="post">
-        <h1>All Cars</h1>
+    <table>
 
-        <table>
-            
-            <thead>
-                <tr>
-                   
-                    <th>ID</th>
-                    <th>Description </th>
-                    <th>Registration</th>
-                    <th>Total liters</th>
-                    <th>Total Amount</th>
-                    <th>Total Distance</th>
-                    <th>Fuel Consumption</th>
-                    
-                </tr>
+        <thead>
+            <tr>
 
-            </thead>
+                <th>ID</th>
+                <th>Description</th>
+                <th>Registration_Number</th>
+                <th>Total_per_liter</th>
+                <th>Total_Amount</th>
+                <th>Total_distance_travelled</th>
+                <th>Fuel_Consumption</th>
 
-            <tbody>
-                {{#each vehicle}}
+            </tr>
 
-                <tr>
-                    <td>
-                        {{this.id}}
-                    </td>
-                    <td>
-                       {{this.description}} 
-                    </td>
-                    <td>
-                        {{this.reg_number}}
-                    </td>
-                    <td>
-                        {{this.total_liters}}
-                    </td>
-                    <td>{{this.total_amount}}</td>
-                </tr>
-                <tr>
-                    <td></td>
-                </tr>
-                {{/each}}
-            </tbody>
+        </thead>
 
-          
-        </table>
-    </form>
+        <tbody>
+            {{#each vehicle}}
+
+            <tr>
+                <td>
+                    {{this.id}}
+                </td>
+                <td>
+                    {{this.description}}
+                </td>
+                <td>
+                    {{this.reg_number}}
+                </td>
+                <td>
+                    {{this.total_per_liter}}
+                </td>
+                <td>
+                    {{this.total_amount}}
+
+                </td>
+                 <td>
+                    {{this.total_distance_travelled}}
+
+                </td>
+                 <td>
+                    {{this.fuel_Consumption}}
+
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            {{/each}}
+        </tbody>
+
+
+    </table>
+</form>

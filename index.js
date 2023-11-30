@@ -5,8 +5,7 @@ import bodyParser from 'body-parser';
 import session from 'express-session';
 import flash from 'express-flash';
 import FuelConsumption from './fuel-consumption.js';
-import FuelConsumptionAPI from './fuel-consumption-api.js';
-import cors from 'cors';
+import FuelConsumptionAPI from './routes/fuel_consumption.js';
 import dotenv from 'dotenv';
 dotenv.config()
 const pgp = pgPromise();
@@ -43,18 +42,15 @@ app.use(
 app.use(flash());
 app.use(express.json());
 app.use(express.json());
-app.use(cors());
 
 
 
 
-app.get("/", fuelConsumptionAPI.addVehicle);
-app.get("/addvehicle", fuelConsumptionAPI.addVehicle);
+app.get("/", fuelConsumptionAPI.vehicles);
 app.post("/addvehicle", fuelConsumptionAPI.addVehicle);
-app.get("/record", fuelConsumptionAPI.refuel);
-app.post("/allcars", fuelConsumptionAPI.vehicles);
-app.get("/allcars", fuelConsumptionAPI.vehicles);
-app.get("/record", fuelConsumptionAPI.refuel);
+app.post("/trip", fuelConsumptionAPI.refuel);
+app.get("/show", fuelConsumptionAPI.vehicles);
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`App started on port: ${PORT}`));

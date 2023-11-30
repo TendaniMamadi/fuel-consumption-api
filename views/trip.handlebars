@@ -1,14 +1,10 @@
+<form action="/trip" method="post">
 
-    <form action="/trip" method="post">
+    <h1>Vehicle Information</h1>
+    <div class="vehicle-info" id="vehicleInfo">
 
-        <h1>Vehicle Information</h1>
-        <div class="vehicle-info" id="vehicleInfo">
-
-            {{#each data}} 
-            {{this.liters}}
-            {{/each}}
-            </div>
-    </form>
-
-
-
+        {{#each data}}
+        {{this.liters}}
+        {{/each}}
+    </div>
+</form>
