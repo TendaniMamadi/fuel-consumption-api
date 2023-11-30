@@ -21,6 +21,7 @@ async function loadVehicles() {
                 const vehicleDiv = document.createElement('div');
                 vehicleDiv.innerHTML = `
                     <p>Description: ${vehicle.description}</p>
+                    <p>reg_number: ${vehicle.reg_number}</p>
                     <p>Total Distance Travelled: ${vehicle.total_distance}</p>
                     <p>Total Fuel Spent: ${vehicle.total_fuel_spent}</p>
                     <p>Fuel Consumption: ${vehicle.fuel_consumption}</p>
