@@ -3,7 +3,7 @@ import pgPromise from 'pg-promise';
 import assert from 'assert';
 
 const pgp = pgPromise();
-const DATABASE_URL=  "postgresql://fuel:fuel@localhost:5432/fuel_consumption";
+const DATABASE_URL=  "postgres://eflnxtju:nYO6HdMxSN257sBxA1va8m_NOBgbSgRI@ella.db.elephantsql.com/eflnxtju";
 
 const config = { 
 	connectionString : DATABASE_URL

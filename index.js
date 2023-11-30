@@ -7,7 +7,7 @@ import FuelConsumptionAPI from './fuel-consumption-api.js';
 const pgp = pgPromise();
 
 const connectionOptions = {
-    connectionString: process.env.DATABASE_URL || 'postgres://fuel:fuel@localhost:5432/fuel_consumption',
+    connectionString: process.env.DATABASE_URL,
     ssl: process.env.NODE_ENV === 'production', // Enable SSL in production
 };
 
