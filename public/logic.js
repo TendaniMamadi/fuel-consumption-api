@@ -11,7 +11,7 @@ async function fetchData(url, method, data) {
 }
 
 async function loadVehicles() {
-    axios.get('http://localhost:3000/api/vehicles')
+    axios.get('https://fuel-consumption-api.onrender.com/api/vehicles')
         .then(data => {
             console.log(data);
             const vehiclesList = document.getElementById('vehicles-list');
