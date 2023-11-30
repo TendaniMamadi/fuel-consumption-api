@@ -50,6 +50,7 @@ app.get("/", fuelConsumptionAPI.vehicles);
 app.post("/addvehicle", fuelConsumptionAPI.addVehicle);
 app.post("/trip", fuelConsumptionAPI.refuel);
 app.get("/show", fuelConsumptionAPI.vehicles);
+app.get("/trip", fuelConsumptionAPI.vehicleId);
 
 
 const PORT = process.env.PORT || 3000;
