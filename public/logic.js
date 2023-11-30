@@ -1,6 +1,6 @@
-// app.js
+// logic.js
 async function fetchData(url, method, data) {
-    const response = await fetch('https://fuel-consumption-api.onrender.com/api/vehicles', {
+    const response = await axios.get('https://fuel-consumption-api.onrender.com/api/vehicles', {
         method: method,
         headers: {
             'Content-Type': 'application/json',
@@ -11,8 +11,9 @@ async function fetchData(url, method, data) {
 }
 
 async function loadVehicles() {
-    fetchData('https://fuel-consumption-api.onrender.com/api/vehicle', 'GET')
+    axios.get('http://localhost:3000/api/vehicles')
         .then(data => {
+            console.log(data);
             const vehiclesList = document.getElementById('vehicles-list');
             vehiclesList.innerHTML = '';
 
@@ -31,24 +32,24 @@ async function loadVehicles() {
 }
 
 async function addVehicle(description) {
-    fetchData('https://fuel-consumption-api.onrender.com/api/vehicle', 'POST', { description })
+    axios.post('https://fuel-consumption-api.onrender.com/api/vehicle', 'POST', { description })
         .then(() => {
             loadVehicles();
-           
+
         })
         .catch(error => console.error('Error adding vehicle:', error));
 }
 
 async function recordRefuel(vehicleId, amountPaid, liters, distance, filledUp) {
-    fetchData('https://fuel-consumption-api.onrender.com/api/refuel', 'POST', { vehicleId, amountPaid, liters, distance, filledUp })
+    axios.post('https://fuel-consumption-api.onrender.com/api/refuel', 'POST', { vehicleId, amountPaid, liters, distance, filledUp })
         .then(() => {
             loadVehicles();
-           
+
         })
         .catch(error => console.error('Error recording refuel:', error));
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadVehicles();
+document.addEventListener('alpine:init', () => {
+    Alpine.data(loadVehicles(),logic);
 });
 

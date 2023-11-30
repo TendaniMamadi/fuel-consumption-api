@@ -1,8 +1,8 @@
 import pgPromise from 'pg-promise';
 import express from 'express';
-
 import FuelConsumption from './fuel-consumption.js';
 import FuelConsumptionAPI from './fuel-consumption-api.js';
+import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config()
 const pgp = pgPromise();
@@ -25,6 +25,7 @@ app.get('/api/vehicles', fuelConsumptionAPI.vehicles);
 app.get('/api/vehicle', fuelConsumptionAPI.vehicle);
 app.post('/api/vehicle', fuelConsumptionAPI.addVehicle);
 app.post('/api/refuel', fuelConsumptionAPI.refuel);
+app.use(cors());
 
 app.listen(PORT, () => console.log(`App started on port: ${PORT}`));
 
