@@ -1,4 +1,4 @@
-[![Node.js CI PostgreSQL] (https://github.com/TendaniMamadi/fuel-consumption-api/actions/workflows/node.js.yml/badge.svg)](https://github.com/TendaniMamadi/fuel-consumption-api/actions/workflows/node.js.yml)
+[![Node.js CI] (https://github.com/TendaniMamadi/fuel-consumption-api/actions/workflows/node.js.yml/badge.svg)](https://github.com/TendaniMamadi/fuel-consumption-api/actions/workflows/node.js.yml)
 # Fuel consumption API
 
 The fuel consumption API keeps track of vehicle fuel usage.
